@@ -39,17 +39,14 @@ public class LoginController {
         return new ModelAndView("login/cadastro");
 }
 
-@PostMapping ("/cadastro")
+@PostMapping ("/login")
     public ModelAndView salvar (@Valid LoginDto model, BindingResult bindingResult){
         if(bindingResult.hasErrors()){
-           ModelAndView mv = new ModelAndView("login/cadastro");
-           return mv;
+           return new ModelAndView("login/cadastro");
         }
         Login loginEntity = modelMapper.map(model, Login.class);
         loginRepository.save(loginEntity);
-
-
-        return new ModelAndView("redirect:/login/index");
+        return new ModelAndView("redirect:/login");
 }
 
 }

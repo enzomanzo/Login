@@ -15,9 +15,9 @@ import javax.validation.constraints.NotNull;
 public class LoginDto {
     @NotBlank
     @NotNull
-    private String login;
+    private String username;
 
     @NotBlank
     @NotNull
-    private String senha;
+    private String password;
 }

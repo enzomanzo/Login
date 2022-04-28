@@ -6,11 +6,38 @@
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <!------ Include the above in your HEAD tag ---------->
 
-<div class="span3 well">
-    <legend>Criar conta</legend>
-    <form accept-charset="UTF-8" th:object="${loginDto}" action="/login" method="POST">
-        <input class="span3" name="username" placeholder="Username" type="text">
-        <input class="span3" name="password" placeholder="Password" type="password">
-        <button class="btn btn-success" type="submit">criar</button>
-    </form>
+<div class="container">
+    <div class="row">
+        <div class="span12">
+            <form class="form-horizontal" th:object="${loginDto}" action='/login/cadastro' method="POST">
+                <fieldset>
+                    <div id="legend">
+                        <legend class="">Criar conta</legend>
+                    </div>
+                    <div class="control-group">
+                        <!-- Username -->
+                        <label class="control-label"  for="username">Username</label>
+                        <div class="controls">
+                            <input type="text" id="username" th:errorclass="is-invalid" th:field="*{username}" name="username" placeholder="" class="input-xlarge">
+                            <div class="invalid-feedback" th:errors="*{username}"></div>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <!-- Password-->
+                        <label class="control-label" for="password">Password</label>
+                        <div class="controls">
+                            <input type="password" id="password" th:errorclass="is-invalid" th:field="*{password}" name="password" placeholder="" class="input-xlarge">
+                            <div class="invalid-feedback" th:errors="*{password}"></div>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <!-- Button -->
+                        <div class="controls">
+                            <button class="btn btn-success">Criar</button>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
 </div>

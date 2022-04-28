@@ -20,6 +20,6 @@ public class Login {
 private long id;
 
 @Column(nullable = false) // indica que o atributo não pode ser nulo
-private String login;
-private String senha;
+private String username;
+private String password;
 }
